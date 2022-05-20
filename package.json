@@ -1,11 +1,12 @@
 {
     "name": "aurorarpc-client",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Client for AuroraRPC",
     "main": "./dist/node.cjs",
     "browser": "./dist/browser.js",
     "types": "./dist/types/index.d.ts",
     "exports": {
+        "browser": "./dist/browser.js",
         "import": "./dist/node.mjs",
         "require": "./dist/node.cjs"
     },
