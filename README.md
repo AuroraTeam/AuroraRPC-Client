@@ -1,1 +1,1 @@
-# AuroraRPC-Client
+# AuroraRPC Client

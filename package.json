@@ -1,0 +1,66 @@
+{
+    "name": "aurorarpc-client",
+    "version": "0.1.0",
+    "description": "Client for AuroraRPC",
+    "main": "./dist/node.cjs",
+    "browser": "./dist/browser.js",
+    "types": "./dist/types/index.d.ts",
+    "exports": {
+        "import": "./dist/node.mjs",
+        "require": "./dist/node.cjs"
+    },
+    "scripts": {
+        "build": "rimraf dist && node build.js && tsc --emitDeclarationOnly",
+        "prepublishOnly": "npm run build",
+        "prettier": "prettier --write src",
+        "lint": "eslint --ext .ts src",
+        "lint:fix": "npm run lint -- --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AuroraTeam/AuroraRPC-Client.git"
+    },
+    "keywords": [
+        "websocket",
+        "ws",
+        "rpc",
+        "client"
+    ],
+    "author": "AuroraTeam",
+    "contributors": [
+        "JoCat (https://github.com/JoCat)"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/AuroraTeam/AuroraRPC-Client/issues"
+    },
+    "homepage": "https://github.com/AuroraTeam/AuroraRPC-Client#readme",
+    "dependencies": {
+        "modern-isomorphic-ws": "^1.0.1",
+        "nanoid": "^3.3.4",
+        "ws": "^8.6.0"
+    },
+    "devDependencies": {
+        "@types/ws": "^8.5.3",
+        "@typescript-eslint/eslint-plugin": "^5.25.0",
+        "@typescript-eslint/parser": "^5.25.0",
+        "esbuild": "^0.14.39",
+        "eslint": "^8.15.0",
+        "eslint-config-prettier": "^8.5.0",
+        "import-sort-style-module": "^6.0.0",
+        "prettier": "^2.6.2",
+        "prettier-plugin-import-sort": "^0.0.7",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.6.4"
+    },
+    "optionalDependencies": {
+        "bufferutil": "^4.0.6",
+        "utf-8-validate": "^5.0.9"
+    },
+    "importSort": {
+        ".js, .ts": {
+            "style": "module",
+            "parser": "typescript"
+        }
+    }
+}
