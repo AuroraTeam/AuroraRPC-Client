@@ -19,17 +19,16 @@ import { Client } from 'aurora-rpc-client';
 
 // --- Connect ---
 
-const client = new Client("ws://localhost:4000")
+const client = new Client("ws://localhost:8080")
 client.connect()
 
 // or
 
 const client = new Client()
-client.connect("ws://localhost:4000")
+client.connect("ws://localhost:8080")
 
 // ---
 
-const result = await client.send('testMethod', {
-    payload: 1
-})
+const result = await client.send('hello')
+console.log(result) // "Hello Aurora RPC!"
 ```
