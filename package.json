@@ -37,10 +37,10 @@
     "homepage": "https://github.com/AuroraTeam/AuroraRPC-Client#readme",
     "dependencies": {
         "modern-isomorphic-ws": "^1.0.1",
-        "nanoid": "^4.0.0",
-        "ws": "^8.6.0"
+        "nanoid": "^4.0.0"
     },
     "devDependencies": {
+        "@tsconfig/node18": "^1.0.1",
         "@types/ws": "^8.5.3",
         "@typescript-eslint/eslint-plugin": "^5.25.0",
         "@typescript-eslint/parser": "^5.25.0",
@@ -50,12 +50,8 @@
         "import-sort-style-module": "^6.0.0",
         "prettier": "^2.6.2",
         "prettier-plugin-import-sort": "^0.0.7",
-        "rimraf": "^3.0.2",
-        "typescript": "^4.6.4"
-    },
-    "optionalDependencies": {
-        "bufferutil": "^4.0.6",
-        "utf-8-validate": "^5.0.9"
+        "rimraf": "^4.4.1",
+        "typescript": "^5.0.2"
     },
     "importSort": {
         ".js, .ts": {

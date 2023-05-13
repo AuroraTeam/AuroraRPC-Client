@@ -13,9 +13,4 @@ export class APIError extends Error {
             message: this.message,
         };
     }
-
-    // Имеет ли смысл?
-    toJson() {
-        return JSON.stringify(this.toObject());
-    }
 }

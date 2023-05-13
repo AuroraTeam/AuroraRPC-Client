@@ -2,12 +2,12 @@ import { Identifier } from "./Identifier";
 import { Payload } from "./Payload";
 
 export interface Response {
-    id?: Identifier;
+    id: Identifier;
     result: Payload;
 }
 
 export interface ResponseError {
-    id?: Identifier;
+    id: Identifier;
     error: {
         code: number;
         message: string;

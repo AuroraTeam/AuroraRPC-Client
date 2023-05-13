@@ -1,2 +1,1 @@
-export type SafeIdentifier = string | number;
-export type Identifier = SafeIdentifier | null;
+export type Identifier = string | number;

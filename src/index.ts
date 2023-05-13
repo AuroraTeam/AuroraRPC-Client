@@ -1,5 +1,8 @@
-export { Client } from "./classes/Client";
-export { Identifier } from "./types/Identifier";
-export { Payload } from "./types/Payload";
-export { Request } from "./types/Request";
-export { Response, ResponseError, ResponseEvent } from "./types/Response";
+export * from "./types/Identifier";
+export * from "./types/Payload";
+export * from "./types/Request";
+export * from "./types/Response";
+
+export * from "./classes/APIError";
+export * from "./classes/Client";
+export * from "./classes/MessageEmitter";

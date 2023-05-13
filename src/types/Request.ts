@@ -4,5 +4,5 @@ import { Payload } from "./Payload";
 export interface Request {
     id?: Identifier;
     method: string;
-    params: Payload;
+    params?: Payload;
 }

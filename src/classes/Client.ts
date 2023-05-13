@@ -1,4 +1,4 @@
-import WebSocket from "modern-isomorphic-ws";
+import WebSocket, { CloseEvent, MessageEvent } from "modern-isomorphic-ws";
 import { nanoid } from "nanoid";
 
 import { Payload } from "../types/Payload";
@@ -108,7 +108,7 @@ export class Client {
         event: WebSocket.MessageEvent | MessageEvent,
         eventListener?: (event: WebSocket.MessageEvent | MessageEvent) => void
     ) {
-        this.#messageEmitter.emit(JSON.parse(event.data));
+        this.#messageEmitter.emit(JSON.parse(event.data.toString()));
         if (eventListener) eventListener(event);
     }
 
