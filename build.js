@@ -28,6 +28,7 @@ const { build } = require("esbuild");
                 format: "esm",
                 bundle: true,
                 minify: true,
+                keepNames: true,
                 sourcemap: true,
                 ...config,
             }).catch(() => process.exit(1));

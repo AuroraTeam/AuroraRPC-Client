@@ -26,13 +26,13 @@ export class Client {
     }
 
     public connect(url?: string, events?: Events) {
+        const _url = url || this.#url;
+        if (!_url) throw new Error("Url not defined");
+
+        const getEvents = <T extends keyof Events>(name: T) =>
+            events?.[name] || this.#events?.[name];
+
         return new Promise((resolve, reject) => {
-            const _url = url || this.#url;
-            if (!_url) return;
-
-            const getEvents = <T extends keyof Events>(name: T) =>
-                events?.[name] || this.#events?.[name];
-
             this.#socket = new WebSocket(_url);
             this.#socket.onopen = (event) => {
                 this.#onOpen(event, getEvents("onOpen"));
