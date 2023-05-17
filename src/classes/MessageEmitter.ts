@@ -9,7 +9,7 @@ export default class MessageEmitter {
     }
 
     emit(data: Response | ResponseError) {
-        if (data.id === undefined || data.id === null)
+        if (!["number", "string"].includes(typeof data.id))
             // TODO Implement notifications
             return console.error("[AuroraRPC] Broken request: ", data);
 

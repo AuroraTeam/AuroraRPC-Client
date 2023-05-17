@@ -4,7 +4,6 @@ import { nanoid } from "nanoid";
 import { Payload } from "../types/Payload";
 import { Request } from "../types/Request";
 import { Response, ResponseError } from "../types/Response";
-import { APIError } from "./APIError";
 import MessageEmitter from "./MessageEmitter";
 
 interface Events {
@@ -25,9 +24,13 @@ export class Client {
         this.#events = events;
     }
 
+    /**
+     * Подключение к серверу
+     * @throws {Error}
+     */
     public connect(url?: string, events?: Events) {
         const _url = url || this.#url;
-        if (!_url) throw new Error("Url not defined");
+        if (!_url) throw new Error("[AuroraRPC] Url not defined");
 
         const getEvents = <T extends keyof Events>(name: T) =>
             events?.[name] || this.#events?.[name];
@@ -62,11 +65,11 @@ export class Client {
      * Отправка запроса
      * @param method Тип реквеста
      * @param params Данные
-     * @throws {ResponseError | APIError}
+     * @throws {ResponseError | Error}
      */
     public send(method: string, params: Payload): Promise<Response> {
         if (!this.#socket || !this.hasConnected())
-            throw new APIError(90, "[AuroraRPC] WebSocket not connected");
+            throw new Error("[AuroraRPC] WebSocket not connected");
 
         const id = nanoid();
         const request: Request = { id, method, params };
@@ -77,8 +80,8 @@ export class Client {
             this.#messageEmitter.addListener(
                 id,
                 (data: Response | ResponseError): void => {
-                    if ((<ResponseError>data).error !== undefined) reject(data);
-                    else resolve(<Response>data);
+                    if ("error" in data) reject(data);
+                    else resolve(data);
                 }
             )
         );
