@@ -6,7 +6,7 @@ import { Request } from "../types/Request";
 import { Response, ResponseError } from "../types/Response";
 import MessageEmitter from "./MessageEmitter";
 
-interface Events {
+export interface Events {
     onClose?: (event: WebSocket.CloseEvent | CloseEvent) => void;
     onError?: (event: WebSocket.ErrorEvent | Event) => void;
     onMessage?: (event: WebSocket.MessageEvent | MessageEvent) => void;
