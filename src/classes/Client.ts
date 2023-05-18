@@ -1,4 +1,4 @@
-import WebSocket, { CloseEvent, MessageEvent } from "modern-isomorphic-ws";
+import WebSocket from "modern-isomorphic-ws";
 import { nanoid } from "nanoid";
 
 import { Payload } from "../types/Payload";

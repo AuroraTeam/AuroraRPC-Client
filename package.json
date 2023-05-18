@@ -37,7 +37,8 @@
     "homepage": "https://github.com/AuroraTeam/AuroraRPC-Client#readme",
     "dependencies": {
         "modern-isomorphic-ws": "^1.0.1",
-        "nanoid": "^4.0.0"
+        "nanoid": "^4.0.0",
+        "ws": "^8.13.0"
     },
     "devDependencies": {
         "@tsconfig/node18": "^1.0.1",
