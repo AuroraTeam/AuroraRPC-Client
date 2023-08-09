@@ -1,4 +1,1 @@
-/**
- * Valid JSON value
- */
-export type Payload = unknown;
+export type Payload = object | unknown[];
