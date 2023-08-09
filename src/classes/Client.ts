@@ -67,7 +67,7 @@ export class Client {
      * @param params Данные
      * @throws {ResponseError | Error}
      */
-    public send(method: string, params: Payload): Promise<Response> {
+    public send(method: string, params?: Payload): Promise<Response> {
         if (!this.#socket || !this.hasConnected())
             throw new Error("[AuroraRPC] WebSocket not connected");
 
