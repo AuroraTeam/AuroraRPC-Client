@@ -1,6 +1,6 @@
 {
     "name": "aurora-rpc-client",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "description": "Aurora RPC Client implementation",
     "main": "./dist/node.cjs",
     "browser": "./dist/browser.js",
