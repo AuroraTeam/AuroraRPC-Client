@@ -1,6 +1,6 @@
 .editorconfig
 .eslintrc.js
 tsconfig.json
-build.js
+build.mjs
 src
 .prettierrc.json
