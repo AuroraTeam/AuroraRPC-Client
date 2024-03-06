@@ -82,8 +82,8 @@ export class Client {
                 (data: Response | ResponseError): void => {
                     if ("error" in data) reject(data);
                     else resolve(data);
-                }
-            )
+                },
+            ),
         );
     }
 
@@ -91,7 +91,7 @@ export class Client {
 
     #onOpen(
         event: WebSocket.Event | Event,
-        eventListener?: (event: WebSocket.Event | Event) => void
+        eventListener?: (event: WebSocket.Event | Event) => void,
     ): void {
         console.log("[AuroraRPC] Connection established");
         if (eventListener) eventListener(event);
@@ -99,7 +99,7 @@ export class Client {
 
     #onClose(
         event: WebSocket.CloseEvent | CloseEvent,
-        eventListener?: (event: WebSocket.CloseEvent | CloseEvent) => void
+        eventListener?: (event: WebSocket.CloseEvent | CloseEvent) => void,
     ) {
         if (event.wasClean) return console.log("[AuroraRPC] Connection closed");
         if (event.code === 1006) console.error("[AuroraRPC] Break connection");
@@ -109,7 +109,7 @@ export class Client {
 
     #onMessage(
         event: WebSocket.MessageEvent | MessageEvent,
-        eventListener?: (event: WebSocket.MessageEvent | MessageEvent) => void
+        eventListener?: (event: WebSocket.MessageEvent | MessageEvent) => void,
     ) {
         this.#messageEmitter.emit(JSON.parse(event.data.toString()));
         if (eventListener) eventListener(event);
@@ -117,7 +117,7 @@ export class Client {
 
     #onError(
         event: WebSocket.ErrorEvent | Event,
-        eventListener?: (event: WebSocket.ErrorEvent | Event) => void
+        eventListener?: (event: WebSocket.ErrorEvent | Event) => void,
     ) {
         console.error("[AuroraRPC] WebSocket error:", event);
         if (eventListener) eventListener(event);

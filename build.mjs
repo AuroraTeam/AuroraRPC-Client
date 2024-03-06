@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { build } = require("esbuild");
+import { build } from "esbuild";
 
 (async () => {
     console.log("Build...");
@@ -32,7 +31,7 @@ const { build } = require("esbuild");
                 sourcemap: true,
                 ...config,
             }).catch(() => process.exit(1));
-        })
+        }),
     );
 
     console.timeEnd("Build successfully");

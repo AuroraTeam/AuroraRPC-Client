@@ -3,3 +3,4 @@
 tsconfig.json
 build.js
 src
+.prettierrc.json
