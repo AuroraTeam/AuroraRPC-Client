@@ -1,5 +1,8 @@
 # AuroraRPC-Client
 
+> [!CAUTION]
+> This package is moved to [AuroraRPC](https://github.com/AuroraTeam/AuroraRPC) monorepo. Please use `@aurora-rpc/client` instead.
+
 ## Description
 
 This is the client implementation for Aurora RPC.  
